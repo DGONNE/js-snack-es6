@@ -21,3 +21,13 @@ const bikes = [
     }
 
 ];
+
+// Ciclo array
+let bike = bikes[0]
+
+for(let i = 1; i < bikes.length; i++) {
+    if(bikes[i].weight < bike.weight ) {
+        bike = bikes[i];
+    }
+}
+console.log(bike);
