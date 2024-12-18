@@ -6,6 +6,10 @@ Generare numeri random al posto degli 0 nelle proprietà “punti” fatti e “
 Infine, creiamo un nuovo array i cui elementi contengono solo nomi e falli subiti e stampiamo tutto in console.
 */
 
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
 // Array
 const teams = [
 {
@@ -29,3 +33,24 @@ const teams = [
     fouls: 0
 }
 ];
+
+// ciclare array con numeri randomici
+
+for(let i = 0; i < teams.length; i++) {
+    const team = teams[i];
+    team.points = getRndInteger(0, 102);
+    team.fouls = getRndInteger(0,70);
+}
+
+
+
+// nuovo array con solo nomi e falli subiti 
+const teamsAndFouls = [];
+for(let i = 0; i < teams.length; i++) {
+    const team = teams[i];
+    teamsAndFouls.push({
+        teamName: team.teamName,
+        fouls: team.fouls
+    });
+}
+console.log(teamsAndFouls)
